@@ -1,53 +1,66 @@
 <template name="admin">
-   <div class="tablewrap">
-         <div class="six">
-         <h2>Certificate Administration</h2>
-      </div>
-      <div class="six">
+<div class="tablewrap">
+      	<div class="six">
+         		<h2>Administration</h2>
+      	</div>
+      	<div class="six">
+			<table class="clear">
+				<tr>
+					<th>Used</th>
+					<th>Available</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>#</td>
+					<td>#</td>
+					<td><a>Domains</a></td>
+				</tr>
+			</table>
+      	</div>
 
-
-      </div>
-
-
-   <table id="mycerts">
-      <tr>
-            <th>
-               Hostname
-         </th>
-         <th>
-               Type
-            </th>		
-         <th>
-               Expires
-         </th>
-         <th>
-               Status
-         </th>
-         <th>
-               Actions
-         </th>
-      </tr>
-   <!-- ITERATE -->
-      <tr>
-         <td class="certname">
-               somehost, somehost
-         </td>
-         <td class="certtype">
-               Type
-         </td>
-         <td class="certnum">
-            11/22/33  
-         </td>
-         <td class="certstat">
-               active (colorme)
-         </td>
-         <td class="actions">
-               report
-         </td>
-      </tr>
-   <!-- /ITERATE -->
-
-   </table>
-
-   </div>
+	<table id="useradmin">
+	      	<tr>
+	      		<th>
+				Username
+			</th>
+	            	<th>
+	               		Hostname
+	         	</th>
+	         	<th>
+	               		Type
+	            	</th>		
+	         	<th>
+	               		Expires
+			</th>
+	         	<th>
+	         	      	Status
+	         	</th>
+	         	<th>
+	              	 	Actions
+	         	</th>
+	      	</tr>
+	   <!-- ITERATE -->
+		<tr>
+			<td class="certuser">
+				Username
+			</td>
+         		<td class="certname">
+               			somehost, somehost
+         		</td>
+         		<td class="certtype">
+               			Type
+         		</td>
+         		<td class="certnum">
+            			11/22/33  
+         		</td>
+         		<td class="certstat">
+               			active (colorme) (resend)
+         		</td>
+         		<td class="actions">
+               			details(edit), revoke
+         		</td>
+      		</tr>
+   	<!-- /ITERATE -->
+	</table>
+</div>
 </template>
