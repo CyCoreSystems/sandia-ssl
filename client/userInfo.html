@@ -1,7 +1,10 @@
 <template name="userInfo">
    <div class="userinfo">
       <span class="username">username</span>
-      {{#if isAdmin}}
+      {{#if showMyTemplates}}
+      <span class="homelink"><a href="{{pathFor 'home'}}">My Templates</a></span>
+      {{/if}}
+      {{#if showAdmin}}
       <span class="adminlink"><a href="{{pathFor 'admin'}}">administration</a></span>
       {{/if}}
       <span class="settings">settings</span>
