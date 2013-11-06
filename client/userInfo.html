@@ -2,7 +2,7 @@
    <div class="userinfo">
       <span class="username">username</span>
       {{#if isAdmin}}
-         <span class="adminlink">administration</span>
+      <span class="adminlink"><a href="{{pathFor 'admin'}}">administration</a></span>
       {{/if}}
       <span class="settings">settings</span>
       <span class="logout">logout</span>
