@@ -1,6 +1,7 @@
 Router.map ->
   @route 'home',{ path: '/' }
   @route 'admin'
+  @route 'request'
   @route 'detail',{ data: -> return {
     certDetails: @params.certificateId
   } }
