@@ -26,7 +26,7 @@
                Actions
          </th>
       </tr>
-      {{#each Certificates}}
+      {{#each certificates}}
       <tr>
          <td class="certname">
             {{#each hostnames}}
@@ -37,7 +37,7 @@
             {{certtype}}
          </td>
          <td class="certnum">
-            {{expiration}}
+            {{formatExpiration}}
          </td>
          <td class="certstat">
             {{status}}

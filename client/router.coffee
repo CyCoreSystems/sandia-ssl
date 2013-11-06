@@ -1,5 +1,11 @@
 Router.map ->
-  @route 'home',{ path: '/' }
+  @route 'home',{
+    path: '/'
+    data: ->
+      return {
+        certificates: Certificates.find()
+      }
+  }
   @route 'admin'
   @route 'request'
   @route 'detail',{ data: -> return {
