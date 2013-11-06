@@ -1,0 +1,10 @@
+<template name="userInfo">
+   <div class="userinfo">
+      <span class="username">username</span>
+      {{#if isAdmin}}
+         <span class="adminlink">administration</span>
+      {{/if}}
+      <span class="settings">settings</span>
+      <span class="logout">logout</span>
+   </div>
+</template>

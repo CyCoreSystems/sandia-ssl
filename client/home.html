@@ -1,0 +1,52 @@
+<template name="home">
+   <div class="tablewrap">
+         <div class="six">
+         <h2>My Certificates</h2>
+      </div>
+      <div class="six">
+            <h4><a>Request New Certificate</a></h4>
+      </div>
+
+
+   <table id="mycerts">
+      <tr>
+            <th>
+               Hostname
+         </th>
+         <th>
+               Type
+            </th>		
+         <th>
+               Expires
+         </th>
+         <th>
+               Status
+         </th>
+         <th>
+               Actions
+         </th>
+      </tr>
+      {{#each Certificates}}
+      <tr>
+         <td class="certname">
+            {{#each hostnames}}
+            {{this}}<br/>
+            {{/each}}
+         </td>
+         <td class="certtype">
+            {{certtype}}
+         </td>
+         <td class="certnum">
+            {{expiration}}
+         </td>
+         <td class="certstat">
+            {{status}}
+         </td>
+         <td class="actions">
+            report
+         </td>
+      </tr>
+      {{/each}}
+   </table>
+   </div>
+</template>
