@@ -169,56 +169,44 @@ p {
 
 
 //FORM
+	form { display: block; clear: both; padding-top: 20px; .column(10); .push(1); }
+
+		form li { margin-top: 20px; }
 
         input, select, label {
                 display: inline-block;
                 height: 25px;
                 padding: 5px;
                 margin: 0;
-                border: 1px solid @darkgrey;
-                border-top: 1px solid @darkergrey;
                 font-size: 20px;
+		color: @darkergrey;
         }
 
         label {
+		width: 30%;
+		text-align: right;
                 .border-radius(5px 0 0 5px);
-                background-color: fadeout(@grey, 85%);
-                border-right: 0;
                 margin-left: 5px;
-                .box-shadow(inset 2px 2px 2px 0px @transblack, inset 0px -2px 1px 0 @transblack);
         }
         input, select {
-                background-color: transparent;
-                color: @lightlightblue;
+		background-color: transparent;
                 .border-radius(0 5px 5px 0);
-                border-left: 0;
-                margin-left: -4px;
-                .box-shadow(inset -2px 2px 2px 0px @transblack, inset 0px -2px 1px 0 @transblack);
         }
-        input { width: 55%; }
-
+		input { border: 0 0 1px 0 solid @darkestgrey; }
                 input:focus, select:focus, textarea:focus {
-                        background-color: @lightestgrey;
+                        background-color: @highlightyellow;
                         color: @darkestgrey;
                         outline: none;
                 }
         select {
                 height: 100%;
-                border-top: 0;
         }
         textarea, input[type=submit] {
-                background-color: @lightlightblue;
-                color: @lightergrey;
-                font-size: 16px;
+                font-size: 18px;
                 .border-radius(5px);
-                height: 100px;
                 padding: 5px;
-                border: 1px solid @darkgrey;
-                border-top: 1px solid @darkergrey;
-                .box-shadow(inset 0px 0px 2px 2px @transblack);
                 margin-left: 5px;
         }
-                textarea { width: 80%; }
                 input[type=submit] { width: 25%; font-size: 20px; font-weight: bold; height: 110px; .slowtrans; }
                 input[type=submit]:hover, input[type=submit]:active {
                         color: #fff;

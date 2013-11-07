@@ -1,53 +1,66 @@
 <template name="request">
-   <div class="tablewrap">
-         <div class="six">
-         <h2>New Certificate Request</h2>
-      </div>
-      <div class="six">
-
-
-      </div>
-
-
-   <table id="mycerts">
-      <tr>
-            <th>
-               Hostname
-         </th>
-         <th>
-               Type
-            </th>		
-         <th>
-               Expires
-         </th>
-         <th>
-               Status
-         </th>
-         <th>
-               Actions
-         </th>
-      </tr>
-   <!-- ITERATE -->
-      <tr>
-         <td class="certname">
-               somehost, somehost
-         </td>
-         <td class="certtype">
-               Type
-         </td>
-         <td class="certnum">
-            11/22/33  
-         </td>
-         <td class="certstat">
-               active (colorme)
-         </td>
-         <td class="actions">
-               report
-         </td>
-      </tr>
-   <!-- /ITERATE -->
-
-   </table>
-
+	<div class="tablewrap">
+         	<div class="six">
+         		<h2>New Certificate Request</h2>
+      		</div>
+      		<div class="six">
+      		</div>
+	
+		<div class="form">
+		<form>
+		<ul>
+			<li>
+				<label>Name</label>
+				<input type="text" />
+			</li>
+			<li>
+				<label>Telephone</label>
+				<input type="tel" />
+			</li>
+			<li>
+				<label id="email">Email</label>
+				<input type="email" /> (+)iterate
+			</li>   
+			<li>
+				<label>Organization Number</label>
+				<input type="number" />
+			</li>
+			<li>
+				<label>Internal Billing Number</label>
+				<input type="number" />
+			</li>
+			<li>
+				<label>Certificate Type</label>
+				<select>
+					<option value="standard" SELECTED>Standard</option>
+					<option value="alternate">Subject Alternate</option>
+					<option value="wildcard">Wildcard</option>
+				</select>
+			</li>
+			<li>
+				<label>Expiration Date</label>
+				<select>
+					<option value="1">1 year</option>
+					<option value="2">2 years</option>
+					<option value="3">3 years</option>
+					<option value="4">4 years</option>
+					<option value="5">5 years</option>
+					<option value="6">6 years</option>
+					<option value="7">7 years</option>
+				</select>
+			</li>
+			<li>
+				<label id="csr">Certificate Signing Request</label>
+				<textarea />
+			</li>
+			<li>
+				<input type="reset" value="Clear Form" />
+				<input type="submit" value="Submit Request" />
+			</li>
+					
+			
+		</ul>
+		</form>
+		</div>
    </div>
 </template>
