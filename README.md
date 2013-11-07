@@ -4,7 +4,7 @@ Demonstration SSL Certificate administrative interface
 Certificate schema
 ----------
 
-*  hostnames (array)
+*  altNames (array)
 *  certtype: (enum: 'standard', 'subject alternate', 'wildcard')
 *  expiration: Date
 *  status: (enum: 'pending approval','processing','active','expired','revoked')
