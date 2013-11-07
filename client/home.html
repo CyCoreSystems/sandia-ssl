@@ -22,9 +22,6 @@
          <th>
                Status
          </th>
-         <th>
-               Actions
-         </th>
       </tr>
       {{#each certificates}}
       <tr>
@@ -40,10 +37,9 @@
             {{formatExpiration}}
          </td>
          <td class="certstat">
+	 	<span class="">
             {{status}}
-         </td>
-         <td class="actions">
-            report
+	    	</span>
          </td>
       </tr>
       {{/each}}
