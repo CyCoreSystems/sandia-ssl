@@ -24,14 +24,18 @@ body, div, ul, li, a {
         a { 
 		text-decoration: none; 
 		font-weight: bold;
+		padding: 2px 5px;
+		.border-radius(7px);
 		color: @lightlightblue;
-		border-bottom: 3px transparent;
 		.fasttrans;
 	}
 		a:hover, a:active { 
 			color: @darkhighlightblue; 
-			border-bottom: 3px solid @highlightyellow;
+			background: fadeout(@highlightyellow, 60%);
 			.fasttrans; 
+		}
+		.footer a:hover, .footer a:active {
+			background: fadeout(black, 70%);
 		}
 
 //GRID COLUMNS
@@ -247,6 +251,25 @@ p {
 			.fasttrans;
 			background-color: @lightgrey;
 		}
+	.addEmail {
+		display: inline-block;
+		background: transparent url('/images/icons/add.png') center center no-repeat;
+		background-size: contain;
+		height: 26px;
+		width: 26px;
+		padding: 1px;
+		position: relative;
+			top: 9px;
+			left: 5px;
+		.border-radius(20px);
+		.fasttrans;
+	}
+		.addEmail:hover { 
+			background-color: @orange;
+			.fasttrans;
+		}
+
+
 //TABLE
 
 table {
@@ -310,11 +333,12 @@ table {
 			background-color: @highlightyellow;
 		}
 
-	.clear, .clear tr, .clear tr td {
+	.clear, .clear tr, .clear th, .clear tr td {
 		background: transparent !important;
 		border: none;
 		margin-bottom: 0;
 		padding-bottom: 0;
+		color: @grey;
 	}
 
 	.certdetails div { 
