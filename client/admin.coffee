@@ -14,6 +14,12 @@ confirmRevokation = (e)->
     return
   console.log "Certificate revoked"
 
+sendCertificate = (e)->
+  console.log "Sending certificate"
+
+editCertificate = (e)->
+  console.log "Editing certificate"
+
 Template.admin.events {
   'click button.approve': confirmApproval
   'click button.deny': confirmRejection
