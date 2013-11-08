@@ -6,7 +6,12 @@ Router.map ->
         certificates: Certificates.find()
       }
   }
-  @route 'admin'
+  @route 'admin',{
+    data: ->
+      return {
+        certificates: Certificates.find()
+      }
+  }
   @route 'request'
   @route 'detail',{ data: -> return {
     certDetails: @params.certificateId

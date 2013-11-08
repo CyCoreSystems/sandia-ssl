@@ -1,0 +1,42 @@
+<template name="certificateRowBrief">
+   <td class="certname">
+      {{#each altNames}}
+      {{this}}<br/>
+      {{/each}}
+   </td>
+   <td class="certtype">
+      {{certtype}}
+   </td>
+   <td class="certnum">
+      {{formatExpiration}}
+   </td>
+   <td class="certstat">
+   <span class="{{status}}">
+      {{status}}
+   </span>
+   </td>
+</template>
+
+<template name="certificateRowDetail">
+   <td colspan="4">
+      <div class="certcontact">
+         <span class="contactname">{{owner.name}}</span>
+         <span class="contacttel">{{owner.phone}}</span>
+      </div>
+      <div class="certemail">
+         {{#each owner.emails}}
+         <span class="contactmail">{{this}}</span>
+         {{/each}}
+      </div>
+      <div class="certbilling">
+         <span class="orgnum">{{internal.organizationNumber}}</span>
+         <span class="billnum">{{internal.billingNumber}}</span>
+      </div>
+      <div class="certauth">
+         {{#if lastAuthAt}}
+         <span class="authby">{{lastAuthByName}}</span>
+         <span class="authon">{{lastAuthAt}}</span>
+         {{/if}}
+      </div>
+   </td>
+</template>

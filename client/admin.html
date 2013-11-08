@@ -42,32 +42,42 @@
 	         	</th>
 	      	</tr>
 	   <!-- ITERATE -->
-		<tr>
+      {{#each certificates}}
+      <tr class="certrow" data-certid="{{_id}}">
 			<td class="certuser">
-				Username
+            {{owner.name}}
 			</td>
          		<td class="certname">
-               			somehost, somehost
+                  {{#each altNames}}
+                  {{this}}<br/>
+                  {{/each}}
          		</td>
          		<td class="certtype">
-               			Type
+                  {{certtype}}
          		</td>
          		<td class="certnum">
-            			11/22/33  
+            	   {{formatExpiration}}
          		</td>
          		<td class="certstat">
 				<span class="{{status}}">{{status}}</span>
 				<span class="action">
+               {{#if showApprovalActions}}
 					<div class="approve"></div>
-					<div class="deny"></div>
+               <div class="deny"></div>
+               {{/if}}
 				</span>
          		</td>
          		<td class="actions">
+               {{#if showActiveActions}}
 				<div class="revoke"></div>
-				<div class="resend"></div>
+            <div class="resend"></div>
+               {{/if}}
          		</td>
-      		</tr>
-   	<!-- /ITERATE -->
+      </tr>
+      <tr class="certdetails" data-certid="{{_id}}">
+         {{> certificateRowDetail}}
+      </tr>
+      {{/each}}
 	</table>
 </div>
 </template>
