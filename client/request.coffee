@@ -38,7 +38,7 @@ onSubmit = (e,template)->
   }
   alert('Certificate requested')
   template.find('form').reset()
-  window.location.href = '/'
+  Router.go '/'
 
 addEmail = (e,template)->
   $('#emailList').append('</li><li><label>Alt. Email</label><input type="email" name="email"/>')
