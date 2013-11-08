@@ -37,6 +37,14 @@ Template.admin.events {
   'click div.revoke': confirmRevokation
   'click div.resend': sendCertificate
   'click div.edit': editCertificate
+  'click #expandAll': (e)->
+    $('#expandAll').addClass 'hide'
+    $('#collapseAll').removeClass 'hide'
+    $(".certdetails").addClass 'show'
+  'click #collapseAll': (e)->
+    $('#expandAll').removeClass 'hide'
+    $('#collapseAll').addClass 'hide'
+    $(".certdetails").removeClass 'show'
   'click .certrow': (e)->
     certid = this._id.toString()
     $(".certdetails[data-certid='#{certid}']").toggleClass 'show'
