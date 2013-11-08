@@ -371,6 +371,33 @@ table {
 
 .certname:hover { color: @darkhighlightblue; .fasttrans; }
 
+//ACTIONS
+
+.approve, .deny, .resend, .revoke {
+	height: 20px; 
+	width: 20px;
+	margin-right: 40px;
+	background: transparent;
+	.border-radius(20px);
+	float: right;
+}
+	.approve {
+		background: url('/images/icons/c.png') center center no-repeat; 
+	}
+	.deny, .revoke { 
+		background: url('/images/icons/x.png') center center no-repeat;
+	}
+	.resend {
+		background: url('/images/icons/email.png') center center no-repeat;
+		background-size: contain;
+		.border-radius(5px);
+	}
+	.deny:hover, .approve:hover, .resend:hover, .revoke:hover { 
+		background-color: lighten(@lightlightblue, 20%);
+	}
+
+
+
 
 
 //BUTTONS
