@@ -1,13 +1,13 @@
 <template name="userInfo">
    <div class="userinfo">
-      <span class="username">Welcome, Sandia DemoUser</span>
+      <span class="username">Welcome, <b>Sandia DemoUser</b></span>
       {{#if showMyTemplates}}
       <span class="adminlink"><a href="{{pathFor 'home'}}">My Certificates</a></span>
       {{/if}}
       {{#if showAdmin}}
       <span class="adminlink"><a href="{{pathFor 'admin'}}">Administration</a></span>
       {{/if}}
-      <span class="settings">settings</span>
-      <span class="logout">logout</span>
+      <span class="settings"><i>settings</i></span>
+      <span class="logout"><i>logout</i></span>
    </div>
 </template>
