@@ -11,35 +11,35 @@
 		<ul>
 			<li>
 				<label>Name</label>
-				<input type="text" />
+				<input type="text" name="name"/>
 			</li>
 			<li>
 				<label>Telephone</label>
-				<input type="tel" />
+				<input type="tel" name="phone"/>
 			</li>
-			<li>
+			<li id="emailList">
 				<label id="email">Email</label>
-				<input type="email" /> (+)iterate
+            <input type="email" name="email"/> <span class="addEmail">(+)iterate</span>
 			</li>   
 			<li>
 				<label>Organization Number</label>
-				<input type="number" />
+				<input type="number" name="organizationNumber"/>
 			</li>
 			<li>
 				<label>Internal Billing Number</label>
-				<input type="number" />
+				<input type="number" name="billingNumber"/>
 			</li>
 			<li>
 				<label>Certificate Type</label>
-				<select>
+				<select name="certtype">
 					<option value="standard" SELECTED>Standard</option>
-					<option value="alternate">Subject Alternate</option>
+					<option value="altname">Subject Alternate</option>
 					<option value="wildcard">Wildcard</option>
 				</select>
 			</li>
 			<li>
 				<label>Expiration Date</label>
-				<select>
+				<select name="duration">
 					<option value="1">1 year</option>
 					<option value="2">2 years</option>
 					<option value="3">3 years</option>
@@ -51,7 +51,7 @@
 			</li>
 			<li>
 				<label id="csr" class="help">Certificate Signing Request</label>
-				<textarea />
+				<textarea name="csr"/>
 			</li>
 			<li>
 				<input type="submit" value="Submit Request" />
