@@ -493,10 +493,11 @@ button {
 
 .splash { position: absolute; z-index: 100; top: 40%; left: 25%; width: 50%; height: 50%;
 	.box-shadow(0 0 0 1000px black); text-align: center;
-	background: black; opacity: 0.95; .slowtrans;
+	background: black; opacity: 0.95; .transition(all, 4s, ease-in-out, 0s);
 }
 	.splash:before { color: @lightestgrey; font-weight:bold; font-size: 40px;
 		content: "SSL custom management DEMO for Sandia National Labs by CyCore Systems, Inc.";
-	
 	}
-	.splash.gone { opacity: 0; pointer-events: none; }
+		.splash.gone:before { color: @darkhighlightblue; .fasttrans; }
+	.splash.gone { opacity: 0; pointer-events: none; z-index: -1; top: -20%; }
+
