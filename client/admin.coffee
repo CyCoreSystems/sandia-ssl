@@ -8,6 +8,12 @@ confirmRejection = (e)->
     return
   console.log "Certificate request denied"
 
+confirmRevokation = (e)->
+  reason = prompt "Please confirm the revokation of this certificate request.\n\nReason:",'Revoked'
+  if not reason
+    return
+  console.log "Certificate revoked"
+
 Template.admin.events {
   'click button.approve': confirmApproval
   'click button.deny': confirmRejection
