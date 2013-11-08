@@ -38,9 +38,10 @@ onSubmit = (e,template)->
   }
   alert('Certificate requested')
   template.find('form').reset()
+  window.location.href = '/'
 
 addEmail = (e,template)->
-  $('#emailList').append('<br/><input type="email" name="email"/>')
+  $('#emailList').append('</li><li><label>altEmail</label><input type="email" name="email"/>')
 
 Template.request.events {
   'click input[type="submit"]': onSubmit
