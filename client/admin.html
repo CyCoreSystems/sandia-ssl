@@ -95,14 +95,23 @@
                <span class="billnum"><input type="text" name="billingNumber" value="{{internal.billingNumber}}"/></span>
             </div>
             <div class="certauth">
-               {{#if lastAuthAt}}
-               <span class="authby">{{lastAuthByName}}</span>
-               <span class="authon">{{lastAuthAt}}</span>
-               {{/if}}
+               {{> adminCertAuthDiv}}
             </div>
          </td>
       </tr>
       {{/each}}
 	</table>
 </div>
+</template>
+
+<template name="adminCertAuthDiv">
+               {{#if haveChange}}
+                  <input type="submit" name="submit"/>
+                  <input type="reset" name="reset"/>
+               {{else}}
+                  {{#if lastAuthAt}}
+                  <span class="authby">{{lastAuthByName}}</span>
+                  <span class="authon">{{lastAuthAt}}</span>
+                  {{/if}}
+               {{/if}}
 </template>

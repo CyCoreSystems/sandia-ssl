@@ -11,6 +11,10 @@ Router.map ->
       }
   }
   @route 'admin',{
+    load: ->
+      Session.set 'haveAdminChange',false
+    unload: ->
+      Session.set 'haveAdminChange',false
     data: ->
       return {
         certificates: Certificates.find({},{

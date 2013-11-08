@@ -49,6 +49,9 @@ Template.admin.events {
   'click .certrow': (e)->
     certid = this._id.toString()
     $(".certdetails[data-certid='#{certid}']").toggleClass 'show'
+  'input input': (e,template)->
+    Session.set 'haveAdminChange',true
+    Session.set 'changedAdminCertificateId',this._id
 }
 
 Template.admin.showApprovalActions = ->
@@ -59,3 +62,11 @@ Template.admin.showActiveActions = ->
 
 Template.admin.formatExpiration = ->
   return this.expiration?.toDateString?()
+
+Template.adminCertAuthDiv.haveChange = ->
+  return Session.equals 'haveAdminChange',true
+
+Template.adminCertAuthDiv.events {
+  'click input[type="reset"]': (e,template)->
+    Session.set 'haveAdminChange',false
+}
