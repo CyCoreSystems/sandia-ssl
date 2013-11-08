@@ -3,13 +3,22 @@ Router.map ->
     path: '/'
     data: ->
       return {
-        certificates: Certificates.find()
+        certificates: Certificates.find({},{
+          sort: {
+            status: 1
+          }
+        })
       }
   }
   @route 'admin',{
     data: ->
       return {
-        certificates: Certificates.find()
+        certificates: Certificates.find({},{
+          sort: {
+            lastAuthAt: 1
+            status: 1
+          }
+        })
       }
   }
   @route 'request'

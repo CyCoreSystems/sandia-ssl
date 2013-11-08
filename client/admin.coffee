@@ -1,7 +1,8 @@
 confirmApproval = (e)->
   e.stopPropagation()
-  if confirm "Please confirm your approval of this certificate request"
-    console.log "Certificate request approved"
+  if not confirm "Please confirm your approval of this certificate request"
+    return
+  console.log "Certificate request approved"
   Certificates.update this._id,{$set: { status: 'approved', lastAuthBy: 'Sandia DemoUser', lastAuthAt: new Date() } }
 
 confirmRejection = (e)->
