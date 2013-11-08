@@ -80,7 +80,27 @@
          		</td>
       </tr>
       <tr class="certdetails" data-certid="{{_id}}">
-         {{> certificateRowDetail}}
+         <td colspan="6">
+            <div class="certcontact">
+               <span class="contactname"><input type="name" name="name" value="{{owner.name}}"/></span>
+               <span class="contacttel"><input type="tel" name="phone" value="{{owner.phone}}"/></span>
+            </div>
+            <div class="certemail">
+               {{#each owner.emails}}
+               <span class="contactmail"><input type="email" name="email" value="{{this}}"/></span>
+               {{/each}}
+            </div>
+            <div class="certbilling">
+               <span class="orgnum"><input type="text" name="organizationNumber" value="{{internal.organizationNumber}}"/></span>
+               <span class="billnum"><input type="text" name="billingNumber" value="{{internal.billingNumber}}"/></span>
+            </div>
+            <div class="certauth">
+               {{#if lastAuthAt}}
+               <span class="authby">{{lastAuthByName}}</span>
+               <span class="authon">{{lastAuthAt}}</span>
+               {{/if}}
+            </div>
+         </td>
       </tr>
       {{/each}}
 	</table>
