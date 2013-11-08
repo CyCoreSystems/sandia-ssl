@@ -24,7 +24,7 @@
          </th>
       </tr>
       {{#each certificates}}
-      <tr>
+      <tr class="certrow" data-certid="{{_id}}">
          <td class="certname">
             {{#each altNames}}
             {{this}}<br/>
@@ -42,23 +42,26 @@
 	    	</span>
          </td>
       </tr>
-      <tr class="certdetails show">
+      <tr class="certdetails" data-certid="{{_id}}">
       		<td colspan="4">
 			<div class="certcontact">
-				<span class="contactname">Contact Name</span>
-				<span class="contacttel">123-456-7890</span>
+            <span class="contactname">{{owner.name}}</span>
+            <span class="contacttel">{{owner.phone}}</span>
 			</div>
 			<div class="certemail">
-				<span class="contactmail">contact@sandia.gov</span>
-				<span class="contactmail">second@domain.com</span>
+            {{#each owner.emails}}
+            <span class="contactmail">{{this}}</span>
+            {{/each}}
 			</div>
 			<div class="certbilling">
-				<span class="orgnum">1111111111</span>
-				<span class="billnum">0000000000</span>
+            <span class="orgnum">{{internal.organizationNumber}}</span>
+            <span class="billnum">{{internal.billingNumber}}</span>
 			</div>
 			<div class="certauth">
-				<span class="authby">Admin Name</span>
-				<span class="authon">11/22/33</span>
+            {{#if lastAuthAt}}
+            <span class="authby">{{lastAuthByName}}</span>
+            <span class="authon">{{lastAuthAt}}</span>
+            {{/if}}
 			</div>
       		</td>
 	</tr>

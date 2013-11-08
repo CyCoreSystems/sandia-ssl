@@ -8,11 +8,15 @@ Certificate schema
 *  certtype: (enum: 'standard', 'subject alternate', 'wildcard')
 *  expiration: Date
 *  status: (enum: 'pending approval','processing','active','expired','revoked')
+*  lastAuthBy:
+*  lastAuthByName:
+*  lastAuthAt:
 *  csr:
 *  certificate:
 *  owner:
    * userid:
    * name:
+   * phone:
    * emails: (array)
 *  internal:
    *  organizationNumber
@@ -24,8 +28,10 @@ Certificate schema
    *  status: (new, approved, processing, complete)
    *  approvals: Array
       * administrator: (userid)
+      * name: (Administrator Name)
       * timestamp
    *  rejections: Array
       * administrator: (userid)
+      * name: (Administrator Name)
       * timestamp
       * reason
