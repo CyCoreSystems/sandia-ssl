@@ -5,9 +5,10 @@ Template.userInfo.isAdmin = ->
 
 Template.userInfo.showAdmin = ->
   # Don't show if we are already here
-  if Router.current?().route?.name is 'admin'
-    return false
-  return true
+  return Router.current?().route?.name is 'home'
+#if Router.current?().route?.name is 'admin'
+#   return false
+# return true
 
 Template.userInfo.showMyTemplates = ->
   return Router.current?().route?.name isnt 'home'
