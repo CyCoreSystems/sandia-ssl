@@ -238,7 +238,7 @@ p {
 table {
         border-radius: 20px;
 //      border-collapse: collapse;
-        border-spacing: 5px;
+        border-spacing: 2px;
         width: 100%;
 	border: 5px solid @lightestgrey;
 	.background-linear-gradient(#fff, @lightestgrey);
@@ -249,7 +249,7 @@ table {
                 vertical-align: middle;
                 text-align: center;
 		padding: 2px 0 2px 0;
-        }
+	}
                 td div {
                 margin: 0 auto;
                 width: auto;
@@ -263,6 +263,7 @@ table {
 		}
 @color1: fadeout(@lightgrey, 20%);
 @color2: fadeout(lighten(desaturate(@highlightblue, 30%), 35%), 20%);
+@color3: fadeout(lighten(desaturate(@purple, 30%), 40%), 40%);
 
         tr:nth-child(2n+1) td {
                 background: lighten(@color1, 7%);
@@ -279,6 +280,12 @@ table {
                 tr:nth-child(2n) td:nth-child(2n) {
                         background: lighten(@color2, 10%);
                 }
+	tr:nth-child(4n) {
+		background: @color3;
+	}
+		tr:nth-child(4n) td:nth-child(2n) {
+			background: lighten(@color3, 6%);
+		}
         th {
                 background: transparent;
                 color: @darkergrey;
@@ -296,9 +303,50 @@ table {
 		padding-bottom: 0;
 	}
 
+	.certdetails div { 
+		width: 25%;
+		float: left;
+		margin: 2px 0;
+	}
+		.certdetails div span {
+			display: block;
+			padding: 2px;
+			font-size: 12px;
+		}
+			.certdetails div span:before {
+					font-weight: bold;
+					font-color: @grey;
+					margin-right: 2px;
+			}
+		.contactname:before { content: "User:"; }
+		.contacttel:before { content: "Tel:"; }
+		.contactmail:before { content: "Email:"; }
+		.orgnum:before { content: "Organization:"; }
+		.billnum:before { content: "Int Billing: "; }
+		.authby:before { content: "Approved by:"; }
+		.authon:before { content: "Approved on:"; }
+
+.certdetails td { margin: -5px 0; }
+
+.certdetails * { 
+	height: 0px; 
+	position: relative;
+	left: -4000px;
+	.fasttrans;
+} 
+.certdetails.show * { 
+	height: auto; 
+	position: relative;
+	left: 0;
+	.slowtrans;
+}
+
+
+
+
 //DATA 
 
-.certstat { font-weight: bold; }
+.certstat, .certname { font-weight: bold; }
 
 .active { color: @active; }
 .expiring { color: @expiring; }
@@ -306,6 +354,9 @@ table {
 .revoked { color: @revoked; }
 .requested { color: @requested; }
 .approved { color: @approved; }
+
+.certname:hover { color: @darkhighlightblue; .fasttrans; }
+
 
 
 //BUTTONS
