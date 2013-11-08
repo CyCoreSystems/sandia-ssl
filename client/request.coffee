@@ -41,7 +41,7 @@ onSubmit = (e,template)->
   window.location.href = '/'
 
 addEmail = (e,template)->
-  $('#emailList').append('</li><li><label>altEmail</label><input type="email" name="email"/>')
+  $('#emailList').append('</li><li><label>Alt. Email</label><input type="email" name="email"/>')
 
 Template.request.events {
   'click input[type="submit"]': onSubmit
