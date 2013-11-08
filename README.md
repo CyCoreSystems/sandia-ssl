@@ -7,7 +7,7 @@ Certificate schema
 *  altNames (array)
 *  certtype: (enum: 'standard', 'subject alternate', 'wildcard')
 *  expiration: Date
-*  status: (enum: 'pending approval','processing','active','expired','revoked')
+*  status: (enum: 'requested','approved','active','expiring','expired','revoked')
 *  lastAuthBy:
 *  lastAuthByName:
 *  lastAuthAt:
