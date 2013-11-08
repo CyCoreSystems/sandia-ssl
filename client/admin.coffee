@@ -2,6 +2,7 @@ confirmApproval = (e)->
   e.stopPropagation()
   if confirm "Please confirm your approval of this certificate request"
     console.log "Certificate request approved"
+  Certificates.update this._id,{$set: { status: 'approved', lastAuthBy: 'Sandia DemoUser', lastAuthAt: new Date() } }
 
 confirmRejection = (e)->
   e.stopPropagation()
@@ -9,6 +10,8 @@ confirmRejection = (e)->
   if not reason
     return
   console.log "Certificate request denied"
+  Certificates.remove this._id
+
 
 confirmRevokation = (e)->
   e.stopPropagation()
@@ -16,10 +19,13 @@ confirmRevokation = (e)->
   if not reason
     return
   console.log "Certificate revoked"
+  this.status = 'revoked'
+  Certificates.update this._id,{$set: { status: 'revoked', lastAuthBy: 'Sandia DemoUser', lastAuthAt: new Date() } }
 
-sendCertificate = (e)->
+sendCertificate = (e,template)->
   e.stopPropagation()
-  console.log "Sending certificate"
+  console.log "Sending certificate:",this._id.toString()
+  alert "Certificate information resent to #{this.owner.emails[0]}"
 
 editCertificate = (e)->
   e.stopPropagation()
