@@ -230,4 +230,3 @@ Meteor.startup ->
     console.log "Loading initial data"
     _.each dummyData,(d)->
       Certificates.insert d
-    Certificates.insert dummyData
