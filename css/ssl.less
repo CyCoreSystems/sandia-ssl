@@ -397,7 +397,7 @@ table {
 	}
 
 .help { position: relative; .fasttrans; }
-.help:after {
+.help#csr:after {
 	height: 10px;
 	width: 10px;
 	.border-radius(10px);
@@ -412,7 +412,7 @@ table {
 		top: -12px;
 		right: -2px;
 }
-	.help:hover:after {
+	.help#csr:hover:after {
 		color: @orange;
 		.fasttrans;
 	}
@@ -428,16 +428,22 @@ table {
 		border: 2px solid @grey;
 		position: absolute;
 			top: 30px;
-		content: "CSR Generation Help";
 		.fasttrans;
 		opacity: 0;
 		pointer-events: none;
 	}
+		.help#csr:before {
+			content: "CSR Generation Help";
+		}
 		.help:hover:before {
 			opacity: 1;
 			.slowtrans;
 		}
-
+		.help#domains:before {
+			padding: 10px 20px;
+			height: auto;
+			content: "Approved Domains ________  test.sandia.gov demo.sandia.gov aaa.sandia.gov bbb.sandia.gov ccc.sandia.gov";
+		}
 
 //BUTTONS
 
