@@ -37,6 +37,7 @@ body, div, ul, li, a {
 		.footer a:hover, .footer a:active {
 			background: fadeout(black, 70%);
 		}
+.hide { display: none; }  
 
 //GRID COLUMNS
 
@@ -466,7 +467,7 @@ table {
 		.help#domains:before {
 			padding: 10px 20px;
 			height: auto;
-			content: "Approved Domains ________  test.sandia.gov demo.sandia.gov aaa.sandia.gov bbb.sandia.gov ccc.sandia.gov";
+			content: "Approved Domains ________  alpha.sandiatest.gov beta.sandiatest.gov gamma.sandiatest.gov delta.sandiatest.gov epsilon.sandiatest.gov eta.sandiatest.gov zeta.sandiatest.gov";
 		}
 
 //BUTTONS
@@ -489,3 +490,13 @@ button {
 //MISC
 
 #req { color: @grey; text-align: right; font-size: 14px; height: 100%; padding-top: 45px;}
+
+.splash { position: absolute; z-index: 100; top: 40%; left: 25%; width: 50%; height: 50%;
+	.box-shadow(0 0 0 1000px black); text-align: center;
+	background: black; opacity: 0.95; .slowtrans;
+}
+	.splash:before { color: @lightestgrey; font-weight:bold; font-size: 40px;
+		content: "SSL custom management DEMO for Sandia National Labs by CyCore Systems, Inc.";
+	
+	}
+	.splash.gone { opacity: 0; pointer-events: none; }
