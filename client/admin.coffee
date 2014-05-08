@@ -68,5 +68,8 @@ Template.adminCertAuthDiv.haveChange = ->
 
 Template.adminCertAuthDiv.events {
   'click input[type="reset"]': (e,template)->
+    console.log "Target is:",e.target
+    # FIXME - reset isn't working
+    e.currentTarget.form?.reset()
     Session.set 'haveAdminChange',false
 }
